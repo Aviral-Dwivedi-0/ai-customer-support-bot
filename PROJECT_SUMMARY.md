@@ -235,7 +235,7 @@ POST /chat
 
 ### Environment Variables (.env)
 ```
-GEMINI_API_KEY=AIzaSyAj3em_GO9AKHMmKqvJjzaY26jV7zkWcwM
+GEMINI_API_KEY=your-api-key
 ```
 
 ### Model Configuration
