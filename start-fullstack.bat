@@ -5,7 +5,7 @@ echo ===============================================
 echo.
 
 echo Starting Flask Backend...
-start "Flask Backend" cmd /k "venv\Scripts\activate && python app.py"
+start "Flask Backend" cmd /k "venv\Scripts\activate && cd backend && python run.py"
 
 timeout /t 5 /nobreak >nul
 

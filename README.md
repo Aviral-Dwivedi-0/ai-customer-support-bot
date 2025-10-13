@@ -16,12 +16,14 @@ An AI-powered customer support chatbot with a beautiful React frontend and Flask
 ## 🛠 Tech Stack
 
 **Frontend:**
+
 - ⚛️ React 18
 - 📡 Axios
 - 🎨 Custom CSS with animations
 - 📱 Responsive design
 
 **Backend:**
+
 - 🐍 Flask (Python)
 - 🗄️ SQLite
 - 🤖 Google Gemini 2.5 Flash AI
@@ -37,6 +39,7 @@ start-fullstack.bat
 ```
 
 Access the app at:
+
 - **Frontend:** http://localhost:3000
 - **Backend API:** http://localhost:5000
 
@@ -46,8 +49,11 @@ Access the app at:
 # Activate virtual environment
 venv\Scripts\activate
 
+# Navigate to backend
+cd backend
+
 # Start Flask server
-python app.py
+python run.py
 ```
 
 ### Frontend Only
@@ -86,14 +92,29 @@ source venv/bin/activate
 
 ### 3. Install Dependencies
 
+**Backend:**
 ```bash
+cd backend
 pip install -r requirements.txt
+```
+
+**Frontend:**
+```bash
+cd frontend
+npm install
 ```
 
 ### 4. Configure Gemini API Key
 
 1. Get your API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. Create a `.env` file in the project root:
+2. Create a `.env` file in the **backend** directory:
+
+```bash
+cd backend
+cp .env.example .env
+```
+
+3. Edit `.env` and add your API key:
 
 ```
 GEMINI_API_KEY=your_actual_gemini_api_key_here
@@ -116,6 +137,7 @@ The server will start on `http://localhost:5000`
 Health check endpoint to verify the server is running.
 
 **Response:**
+
 ```json
 {
   "status": "ok"
@@ -127,6 +149,7 @@ Health check endpoint to verify the server is running.
 Send a message to the chatbot.
 
 **Request:**
+
 ```json
 {
   "session_id": "unique_session_id",
@@ -135,6 +158,7 @@ Send a message to the chatbot.
 ```
 
 **Response:**
+
 ```json
 {
   "response": "You can return products within 30 days of purchase with original packaging and receipt."
@@ -142,6 +166,7 @@ Send a message to the chatbot.
 ```
 
 **Escalation Response:**
+
 ```json
 {
   "response": "I can't answer that question. I will escalate this to a human agent.\n\nSummary for agent:\n[Conversation summary]"
@@ -153,6 +178,7 @@ Send a message to the chatbot.
 Get conversation summary for agent handoff.
 
 **Request:**
+
 ```json
 {
   "session_id": "unique_session_id"
@@ -160,6 +186,7 @@ Get conversation summary for agent handoff.
 ```
 
 **Response:**
+
 ```json
 {
   "summary": "Customer asked about return policy and shipping times..."
@@ -175,6 +202,7 @@ python test_api.py
 ```
 
 Tests cover:
+
 - ✅ Health check
 - ✅ FAQ matching
 - ✅ Context memory (follow-up questions)
@@ -186,6 +214,7 @@ Tests cover:
 ### 1. In-Context Learning Approach
 
 Instead of using vector databases or RAG, this bot uses **in-context learning**:
+
 - Every query sends the complete FAQ document to Gemini
 - Conversation history is included for context
 - The LLM responds based only on the provided FAQs
@@ -210,6 +239,7 @@ New User Query:
 ### 3. Escalation Logic
 
 When Gemini responds with exactly `"ESCALATE"`, the bot:
+
 1. Detects the escalation trigger
 2. Generates a conversation summary using Gemini
 3. Returns escalation message with summary for human agent
@@ -302,15 +332,19 @@ print(response.json()['response'])
 ## Troubleshooting
 
 ### Issue: `GEMINI_API_KEY not found`
+
 **Solution:** Make sure you created a `.env` file with your API key.
 
 ### Issue: `Database locked error`
+
 **Solution:** Close all connections and restart the Flask server.
 
 ### Issue: Gemini API rate limit
+
 **Solution:** The free tier has rate limits. Wait a few minutes or upgrade your API plan.
 
 ### Issue: Escalation not triggering
+
 **Solution:** Check if Gemini returns exactly `"ESCALATE"` (case-sensitive). Adjust the prompt if needed.
 
 ## Future Enhancements

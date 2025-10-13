@@ -3,39 +3,64 @@
 ## ⚡ 5-Minute Setup
 
 ### 1. Navigate to Project
+
 ```bash
 cd "d:\Unthinkable Assignment"
 ```
 
 ### 2. Activate Virtual Environment
+
 ```bash
 venv\Scripts\activate
 ```
 
-### 3. Start the Server
+### 3. Start the Backend Server
+
 ```bash
-python app.py
+cd backend
+python run.py
 ```
 
-✅ Server runs on: http://localhost:5000
+✅ Backend runs on: http://localhost:5000
+
+### 4. Start the Frontend (New Terminal)
+
+```bash
+cd frontend
+npm start
+```
+
+✅ Frontend runs on: http://localhost:3000
+
+### Or Use Automated Startup (Windows)
+
+```bash
+start-fullstack.bat
+```
 
 ---
 
 ## 🧪 Testing
 
 ### Quick Test (2 scenarios)
+
 ```bash
-python quick_test.py
+cd backend
+python tests/quick_test.py
 ```
 
 ### Full Test Suite (5 tests)
+
 ```bash
-python test_api.py
+cd backend
+python tests/test_api.py
 ```
 
 ### Live Demonstration (5 scenarios)
+
 ```bash
-python demo.py
+cd backend
+python scripts/demo.py
 ```
 
 ---
@@ -45,11 +70,13 @@ python demo.py
 ### Using curl (Windows PowerShell)
 
 #### Health Check
+
 ```powershell
 curl http://localhost:5000/health
 ```
 
 #### Ask a Question
+
 ```powershell
 curl -X POST http://localhost:5000/chat `
   -H "Content-Type: application/json" `
@@ -57,6 +84,7 @@ curl -X POST http://localhost:5000/chat `
 ```
 
 #### Get Conversation Summary
+
 ```powershell
 curl -X POST http://localhost:5000/escalate `
   -H "Content-Type: application/json" `
@@ -81,21 +109,22 @@ print(response.json()['response'])
 
 ## 📁 Important Files
 
-| File | Purpose |
-|------|---------|
-| `app.py` | Main Flask application |
-| `faqs.txt` | FAQ knowledge base |
-| `.env` | API keys (DO NOT commit to git) |
-| `test_api.py` | Comprehensive test suite |
-| `demo.py` | Live demonstration script |
-| `README.md` | Full documentation |
-| `PROJECT_SUMMARY.md` | Completion report |
+| File                 | Purpose                         |
+| -------------------- | ------------------------------- |
+| `app.py`             | Main Flask application          |
+| `faqs.txt`           | FAQ knowledge base              |
+| `.env`               | API keys (DO NOT commit to git) |
+| `test_api.py`        | Comprehensive test suite        |
+| `demo.py`            | Live demonstration script       |
+| `README.md`          | Full documentation              |
+| `PROJECT_SUMMARY.md` | Completion report               |
 
 ---
 
 ## 🔧 Troubleshooting
 
 ### Server won't start?
+
 ```bash
 # Make sure virtual environment is activated
 venv\Scripts\activate
@@ -108,6 +137,7 @@ python app.py
 ```
 
 ### Tests failing?
+
 ```bash
 # Make sure server is running in another terminal
 # Then run tests
@@ -115,6 +145,7 @@ python test_api.py
 ```
 
 ### API not responding?
+
 ```bash
 # Check if server is running
 # Visit: http://localhost:5000/health
@@ -128,7 +159,7 @@ python test_api.py
 ✅ **Remembers conversation** context  
 ✅ **Escalates unknown** questions to humans  
 ✅ **Summarizes conversations** for agents  
-✅ **Stores sessions** in SQLite database  
+✅ **Stores sessions** in SQLite database
 
 ---
 
@@ -147,12 +178,15 @@ All 5 tests **PASSED** ✅
 ## 🚀 Next Steps
 
 ### To customize FAQs:
+
 Edit `faqs.txt` and restart server
 
 ### To deploy:
+
 See `README.md` for deployment options
 
 ### To add features:
+
 Check `PROJECT_SUMMARY.md` for enhancement ideas
 
 ---
@@ -160,6 +194,7 @@ Check `PROJECT_SUMMARY.md` for enhancement ideas
 ## 📞 Support
 
 For issues or questions, refer to:
+
 - `README.md` - Complete documentation
 - `PROJECT_SUMMARY.md` - Technical details
 - `Implementation_Plan.md` - Original plan

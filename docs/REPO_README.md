@@ -45,13 +45,14 @@ This is a **production-ready full-stack AI customer support chatbot** that uses 
 🧠 **Context-Aware** - Maintains conversation history for better responses  
 🚀 **Production Ready** - Comprehensive documentation and error handling  
 📱 **Mobile Friendly** - Responsive design works on all devices  
-🔒 **Secure** - API keys managed via environment variables  
+🔒 **Secure** - API keys managed via environment variables
 
 ---
 
 ## ✨ Features
 
 ### Backend Features
+
 - ✅ **Flask REST API** - Clean, well-documented API endpoints
 - ✅ **Google Gemini AI Integration** - Advanced natural language processing
 - ✅ **FAQ-Based Answering** - Answers only from verified knowledge base
@@ -63,6 +64,7 @@ This is a **production-ready full-stack AI customer support chatbot** that uses 
 - ✅ **Comprehensive Error Handling** - User-friendly error messages
 
 ### Frontend Features
+
 - ✅ **Modern React UI** - Beautiful, intuitive chat interface
 - ✅ **Real-time Messaging** - Instant communication with backend
 - ✅ **Typing Indicators** - Visual feedback during bot responses
@@ -78,6 +80,7 @@ This is a **production-ready full-stack AI customer support chatbot** that uses 
 ## 🛠 Tech Stack
 
 ### Backend
+
 - **Python 3.12** - Modern Python with type hints
 - **Flask 3.0.0** - Lightweight web framework
 - **SQLite 3** - Embedded database for conversations
@@ -85,12 +88,14 @@ This is a **production-ready full-stack AI customer support chatbot** that uses 
 - **Flask-CORS** - Cross-origin resource sharing
 
 ### Frontend
+
 - **React 18** - Modern UI library
 - **Axios** - HTTP client for API calls
 - **Custom CSS** - Beautiful animations and styling
 - **JavaScript ES6+** - Modern JavaScript features
 
 ### Development Tools
+
 - **Git** - Version control
 - **VS Code** - Recommended editor
 - **Python venv** - Virtual environment
@@ -110,49 +115,54 @@ This is a **production-ready full-stack AI customer support chatbot** that uses 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/YOUR_USERNAME/ai-customer-support-bot.git
    cd ai-customer-support-bot
    ```
 
 2. **Backend Setup**
+
    ```bash
    # Create virtual environment
    python -m venv venv
-   
+
    # Activate virtual environment
    # Windows:
    venv\Scripts\activate
    # Linux/Mac:
    source venv/bin/activate
-   
+
    # Install dependencies
    pip install -r requirements.txt
-   
+
    # Create .env file with your API key
    echo GEMINI_API_KEY=your_api_key_here > .env
    ```
 
 3. **Frontend Setup**
+
    ```bash
    cd frontend
    npm install
    ```
 
 4. **Run the Application**
-   
+
    **Option 1: Automated (Windows)**
+
    ```bash
    # From project root
    start-fullstack.bat
    ```
-   
+
    **Option 2: Manual**
+
    ```bash
    # Terminal 1 - Backend
    venv\Scripts\activate
    python app.py
-   
+
    # Terminal 2 - Frontend
    cd frontend
    npm start
@@ -217,9 +227,11 @@ ai-customer-support-bot/
 ## 🔌 API Endpoints
 
 ### `GET /health`
+
 Health check endpoint to verify server status.
 
 **Response:**
+
 ```json
 {
   "status": "ok"
@@ -227,9 +239,11 @@ Health check endpoint to verify server status.
 ```
 
 ### `POST /chat`
+
 Main chat endpoint for sending messages and receiving AI responses.
 
 **Request:**
+
 ```json
 {
   "session_id": "session_1234567890",
@@ -238,6 +252,7 @@ Main chat endpoint for sending messages and receiving AI responses.
 ```
 
 **Response:**
+
 ```json
 {
   "response": "You can return products within 30 days of purchase with original packaging and receipt."
@@ -245,9 +260,11 @@ Main chat endpoint for sending messages and receiving AI responses.
 ```
 
 ### `POST /escalate`
+
 Get conversation summary for human agent escalation.
 
 **Request:**
+
 ```json
 {
   "session_id": "session_1234567890"
@@ -255,6 +272,7 @@ Get conversation summary for human agent escalation.
 ```
 
 **Response:**
+
 ```json
 {
   "summary": "Customer asked about return policy and shipping times..."
@@ -266,12 +284,14 @@ Get conversation summary for human agent escalation.
 ## 📸 Screenshots
 
 ### Chat Interface
+
 ![Chat Interface](docs/screenshots/chat-interface.png)
-*Modern, responsive chat interface with typing indicators*
+_Modern, responsive chat interface with typing indicators_
 
 ### Mobile View
+
 ![Mobile View](docs/screenshots/mobile-view.png)
-*Fully responsive design works perfectly on mobile devices*
+_Fully responsive design works perfectly on mobile devices_
 
 ---
 
@@ -316,7 +336,7 @@ A: Your answer here.
 ✅ FAQ matching and response  
 ✅ Conversation context memory  
 ✅ Escalation workflow  
-✅ Conversation summarization  
+✅ Conversation summarization
 
 **All tests passing: 5/5** ✅
 
@@ -336,12 +356,14 @@ A: Your answer here.
 ### Backend Deployment
 
 **Heroku:**
+
 ```bash
 heroku create your-app-name
 git push heroku main
 ```
 
 **Railway:**
+
 ```bash
 railway init
 railway up
@@ -350,6 +372,7 @@ railway up
 ### Frontend Deployment
 
 **Netlify:**
+
 ```bash
 cd frontend
 npm run build
@@ -357,6 +380,7 @@ netlify deploy --prod --dir=build
 ```
 
 **Vercel:**
+
 ```bash
 cd frontend
 vercel --prod

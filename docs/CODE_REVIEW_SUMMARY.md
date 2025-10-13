@@ -1,6 +1,7 @@
 # Code Review Summary
 
 ## Overview
+
 This document summarizes the comprehensive code review and refactoring performed on the AI Customer Support Bot project. All code has been enhanced with clarity improvements, detailed comments, and better organization.
 
 ---
@@ -18,10 +19,12 @@ This document summarizes the comprehensive code review and refactoring performed
 ### Backend Files
 
 #### 1. `app.py` (Flask Backend)
+
 **Original Size:** 221 lines  
 **Refactored Size:** ~350 lines (with comprehensive documentation)
 
 **Improvements:**
+
 - ✅ Added comprehensive module-level docstring explaining the entire application
 - ✅ Documented all configuration constants with inline comments
 - ✅ Added detailed docstrings to all functions with:
@@ -42,6 +45,7 @@ This document summarizes the comprehensive code review and refactoring performed
 **Complex Logic Documentation:**
 
 1. **Database Operations**
+
    ```python
    def get_session_history(session_id):
        """
@@ -51,6 +55,7 @@ This document summarizes the comprehensive code review and refactoring performed
    ```
 
 2. **AI Prompt Construction**
+
    ```python
    def construct_prompt(user_query, history, faqs):
        """
@@ -75,10 +80,12 @@ This document summarizes the comprehensive code review and refactoring performed
 ### Frontend Files
 
 #### 2. `frontend/src/App.js` (Main React Component)
+
 **Original Size:** 130 lines  
 **Refactored Size:** ~180 lines (with comprehensive documentation)
 
 **Improvements:**
+
 - ✅ Added comprehensive module-level JSDoc comment
 - ✅ Documented all React hooks with purpose and usage
 - ✅ Explained state management pattern
@@ -94,6 +101,7 @@ This document summarizes the comprehensive code review and refactoring performed
 **Complex Logic Documentation:**
 
 1. **Session Management**
+
    ```javascript
    /**
     * sessionId: Unique identifier for this conversation session
@@ -104,10 +112,11 @@ This document summarizes the comprehensive code review and refactoring performed
    ```
 
 2. **Message Sending Flow**
+
    ```javascript
    /**
     * Send a message to the backend and handle the response.
-    * 
+    *
     * Flow:
     *   1. Validate message is not empty
     *   2. Add user message to chat
@@ -119,26 +128,31 @@ This document summarizes the comprehensive code review and refactoring performed
    ```
 
 3. **Error Handling**
+
    ```javascript
    // Set user-friendly error message
-   setError('Failed to send message. Please make sure the backend server is running.');
-   
+   setError(
+     "Failed to send message. Please make sure the backend server is running."
+   );
+
    // Add error message to chat UI
    const errorMessage = {
      text: "❌ Sorry, I'm having trouble connecting...",
-     sender: 'bot',
+     sender: "bot",
      timestamp: new Date(),
-     isError: true
+     isError: true,
    };
    ```
 
 ---
 
 #### 3. `frontend/src/components/ChatBubble.js`
+
 **Original Size:** 22 lines  
 **Refactored Size:** ~60 lines (with comprehensive documentation)
 
 **Improvements:**
+
 - ✅ Added comprehensive JSDoc header
 - ✅ Documented all props with @param tags
 - ✅ Explained formatting logic
@@ -146,13 +160,14 @@ This document summarizes the comprehensive code review and refactoring performed
 - ✅ Documented CSS class usage
 
 **Key Documentation:**
+
 ```javascript
 /**
  * Format timestamp into readable time string.
- * 
+ *
  * Converts Date object to 12-hour format with AM/PM.
  * Example: 2:45 PM
- * 
+ *
  * @param {Date} date - The timestamp to format
  * @returns {string} Formatted time string
  */
@@ -162,10 +177,12 @@ const formatTime = (date) => { ... }
 ---
 
 #### 4. `frontend/src/components/InputBox.js`
+
 **Original Size:** 62 lines  
 **Refactored Size:** ~120 lines (with comprehensive documentation)
 
 **Improvements:**
+
 - ✅ Added comprehensive JSDoc header
 - ✅ Documented all props and state
 - ✅ Explained keyboard shortcuts logic
@@ -176,18 +193,19 @@ const formatTime = (date) => { ... }
 **Complex Logic Documentation:**
 
 1. **Keyboard Shortcuts**
+
    ```javascript
    /**
     * Handle keyboard shortcuts in textarea.
-    * 
+    *
     * Shortcuts:
     *   - Enter: Send message (if not holding Shift)
     *   - Shift+Enter: Insert new line (default behavior)
     */
    const handleKeyPress = (e) => {
-     if (e.key === 'Enter' && !e.shiftKey) {
+     if (e.key === "Enter" && !e.shiftKey) {
        e.preventDefault(); // Prevent default new line
-       handleSubmit(e);    // Send message instead
+       handleSubmit(e); // Send message instead
      }
    };
    ```
@@ -198,7 +216,7 @@ const formatTime = (date) => { ... }
     * input: Current value of the textarea
     * Controlled component pattern - React manages the input value
     */
-   const [input, setInput] = useState('');
+   const [input, setInput] = useState("");
    ```
 
 ---
@@ -206,6 +224,7 @@ const formatTime = (date) => { ... }
 ## 📁 Project Structure Verification
 
 ### ✅ Backend Structure
+
 ```
 d:\Unthinkable Assignment\
 ├── app.py                 ✅ Main Flask application (refactored)
@@ -218,6 +237,7 @@ d:\Unthinkable Assignment\
 ```
 
 ### ✅ Frontend Structure
+
 ```
 frontend\
 ├── public\
@@ -236,6 +256,7 @@ frontend\
 ```
 
 ### ✅ Documentation Structure
+
 ```
 d:\Unthinkable Assignment\
 ├── README.md                    ✅ Main documentation
@@ -257,6 +278,7 @@ d:\Unthinkable Assignment\
 ### 1. Documentation Standards
 
 **Before:**
+
 ```python
 def get_session_history(session_id):
     """Retrieve conversation history for a session"""
@@ -269,32 +291,33 @@ def get_session_history(session_id):
 ```
 
 **After:**
+
 ```python
 def get_session_history(session_id):
     """
     Retrieve conversation history for a specific session.
-    
+
     Args:
         session_id (str): Unique identifier for the user session
-    
+
     Returns:
         str: Conversation history as text, or empty string if session not found
-        
+
     Example:
         history = get_session_history("session_1234567890")
         # Returns: "User: Hello\nBot: Hi there!..."
     """
     conn = sqlite3.connect(DATABASE)
     cursor = conn.cursor()
-    
+
     # Query for history matching the session_id
     cursor.execute(
-        'SELECT history FROM conversations WHERE session_id = ?', 
+        'SELECT history FROM conversations WHERE session_id = ?',
         (session_id,)
     )
     result = cursor.fetchone()
     conn.close()
-    
+
     # Return history if found, otherwise empty string
     return result[0] if result else ""
 ```
@@ -302,6 +325,7 @@ def get_session_history(session_id):
 ### 2. Comment Quality
 
 **Inline Comments Added:**
+
 - Purpose of each code block
 - Explanation of complex logic
 - Parameter descriptions
@@ -313,6 +337,7 @@ def get_session_history(session_id):
 
 **Section Headers:**
 All files now use clear section headers:
+
 ```python
 # ========== DATABASE FUNCTIONS ==========
 # ========== FAQ FUNCTIONS ==========
@@ -324,6 +349,7 @@ All files now use clear section headers:
 ### 4. Error Messages
 
 **Enhanced Error Messages:**
+
 ```python
 # Before
 print(f"Error calling Gemini API: {e}")
@@ -365,6 +391,7 @@ return jsonify({"response": bot_response})
 ```
 
 **Why This Matters:**
+
 - Maintains conversation context across messages
 - Provides intelligent escalation to human agents
 - Ensures data persistence for session continuity
@@ -390,6 +417,7 @@ const [error, setError] = useState(null);
 ```
 
 **Why This Matters:**
+
 - Clear separation of concerns
 - Each state variable has specific purpose
 - Easy to understand and maintain
@@ -401,15 +429,16 @@ const [error, setError] = useState(null);
 ```javascript
 const handleKeyPress = (e) => {
   // Check for Enter key WITHOUT Shift
-  if (e.key === 'Enter' && !e.shiftKey) {
+  if (e.key === "Enter" && !e.shiftKey) {
     e.preventDefault(); // Prevent default new line insertion
-    handleSubmit(e);    // Send message instead
+    handleSubmit(e); // Send message instead
   }
   // If Shift+Enter, do nothing (allow default new line)
 };
 ```
 
 **Why This Matters:**
+
 - Provides intuitive UX (Enter to send, Shift+Enter for new line)
 - Prevents accidental message sending
 - Follows common chat interface conventions
@@ -420,12 +449,12 @@ const handleKeyPress = (e) => {
 
 ### Documentation Coverage
 
-| File | Lines of Code | Lines of Comments | Coverage |
-|------|---------------|-------------------|----------|
-| app.py | ~350 | ~120 | 34% |
-| App.js | ~180 | ~60 | 33% |
-| ChatBubble.js | ~60 | ~25 | 42% |
-| InputBox.js | ~120 | ~50 | 42% |
+| File          | Lines of Code | Lines of Comments | Coverage |
+| ------------- | ------------- | ----------------- | -------- |
+| app.py        | ~350          | ~120              | 34%      |
+| App.js        | ~180          | ~60               | 33%      |
+| ChatBubble.js | ~60           | ~25               | 42%      |
+| InputBox.js   | ~120          | ~50               | 42%      |
 
 **Total:** ~710 lines of code with ~255 lines of documentation
 
@@ -442,6 +471,7 @@ const handleKeyPress = (e) => {
 ## 🎯 Best Practices Applied
 
 ### 1. Python (Backend)
+
 - ✅ Google-style docstrings
 - ✅ Type hints in docstrings
 - ✅ Clear function names
@@ -450,6 +480,7 @@ const handleKeyPress = (e) => {
 - ✅ Error handling with descriptive messages
 
 ### 2. JavaScript/React (Frontend)
+
 - ✅ JSDoc comments
 - ✅ Destructured props
 - ✅ Functional components with hooks
@@ -458,6 +489,7 @@ const handleKeyPress = (e) => {
 - ✅ Clear state management
 
 ### 3. General
+
 - ✅ Consistent naming conventions
 - ✅ Clear code organization
 - ✅ Comprehensive error handling
@@ -470,6 +502,7 @@ const handleKeyPress = (e) => {
 ## 🚀 Next Steps (Optional Enhancements)
 
 ### Code Quality
+
 1. Add TypeScript for type safety
 2. Add ESLint configuration
 3. Add Prettier for code formatting
@@ -477,6 +510,7 @@ const handleKeyPress = (e) => {
 5. Add unit tests with comments
 
 ### Documentation
+
 1. Add API documentation (Swagger/OpenAPI)
 2. Add component storybook
 3. Add inline TODO comments for future work
@@ -503,6 +537,7 @@ const handleKeyPress = (e) => {
 ## 📝 Summary
 
 **Total Changes:**
+
 - 4 files refactored
 - ~255 lines of documentation added
 - 100% function documentation coverage
@@ -512,6 +547,7 @@ const handleKeyPress = (e) => {
 **Quality Score:** ⭐⭐⭐⭐⭐ (5/5)
 
 All code now meets professional standards with:
+
 - Clear, comprehensive documentation
 - Logical organization
 - Well-explained complex logic
@@ -537,4 +573,4 @@ All code now meets professional standards with:
 
 ---
 
-*This code review ensures the project is maintainable, scalable, and ready for production deployment.*
+_This code review ensures the project is maintainable, scalable, and ready for production deployment._

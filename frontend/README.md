@@ -13,17 +13,20 @@ Beautiful, modern React frontend for the AI Customer Support Bot.
 ## Setup Instructions
 
 ### Prerequisites
+
 - Node.js 16+ and npm installed
 - Backend API running on `http://localhost:5000`
 
 ### Installation
 
 1. **Navigate to frontend directory:**
+
    ```bash
    cd frontend
    ```
 
 2. **Install dependencies:**
+
    ```bash
    npm install
    ```
@@ -57,7 +60,9 @@ frontend/
 ## Components
 
 ### App.js
+
 Main application component that:
+
 - Manages conversation state
 - Handles API calls to backend
 - Displays chat messages
@@ -65,14 +70,18 @@ Main application component that:
 - Handles errors
 
 ### ChatBubble
+
 Renders individual messages with:
+
 - User/bot styling
 - Timestamps
 - Smooth animations
 - Error states
 
 ### InputBox
+
 Message input component with:
+
 - Text area for typing
 - Send button
 - Keyboard shortcuts (Enter to send)
@@ -81,30 +90,36 @@ Message input component with:
 ## Configuration
 
 ### Backend API URL
+
 The frontend connects to the backend at `http://localhost:5000` by default.
 
 To change this, edit `src/App.js`:
+
 ```javascript
-const API_URL = 'http://your-backend-url';
+const API_URL = "http://your-backend-url";
 ```
 
 ## Features Implemented
 
 ### Real-time Chat
+
 - Send messages to AI bot
 - Receive intelligent responses
 - View conversation history
 
 ### Typing Indicator
+
 - Shows animated dots while bot is thinking
 - Improves user experience
 
 ### Error Handling
+
 - Connection error messages
 - Failed request notifications
 - Graceful degradation
 
 ### Responsive Design
+
 - Works on desktop, tablet, and mobile
 - Touch-friendly interface
 - Adaptive layout
@@ -112,12 +127,14 @@ const API_URL = 'http://your-backend-url';
 ## Styling
 
 The app uses a beautiful gradient purple theme with:
+
 - Smooth animations
 - Modern shadows and effects
 - Clean typography
 - Accessible colors
 
 ### Color Scheme
+
 - Primary: #667eea → #764ba2 (Purple gradient)
 - Background: #f7fafc (Light gray)
 - Text: #333 (Dark gray)
@@ -129,6 +146,7 @@ The app uses a beautiful gradient purple theme with:
 The frontend communicates with the Flask backend using Axios:
 
 ### POST /chat
+
 ```javascript
 {
   "session_id": "unique_id",
@@ -137,6 +155,7 @@ The frontend communicates with the Flask backend using Axios:
 ```
 
 Response:
+
 ```javascript
 {
   "response": "bot response"
@@ -160,6 +179,7 @@ Response:
 - `npm eject` - Eject from Create React App
 
 ### Hot Reload
+
 The dev server supports hot module replacement. Changes are reflected instantly without losing state.
 
 ## Production Build
@@ -175,13 +195,16 @@ This creates an optimized build in the `build/` directory.
 ## Deployment
 
 ### Deploy with Backend
+
 1. Build the frontend: `npm run build`
 2. Serve the `build/` directory with your Flask app
 3. Configure Flask to serve static files
 
 ### Deploy Separately
+
 1. Build the frontend
 2. Deploy to:
+
    - Netlify
    - Vercel
    - GitHub Pages
@@ -192,16 +215,20 @@ This creates an optimized build in the `build/` directory.
 ## Troubleshooting
 
 ### Backend Connection Error
+
 **Problem:** "Failed to send message"
 **Solution:** Ensure Flask backend is running on port 5000
 
 ### CORS Error
+
 **Problem:** Cross-origin request blocked
 **Solution:** Backend has flask-cors installed and configured
 
 ### Port Already in Use
+
 **Problem:** Port 3000 is already in use
 **Solution:** Kill the process or use a different port:
+
 ```bash
 PORT=3001 npm start
 ```

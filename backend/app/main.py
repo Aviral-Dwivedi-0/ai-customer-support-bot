@@ -34,8 +34,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Configuration constants
-DATABASE = 'conversations.db'  # SQLite database file for conversation storage
-FAQ_FILE = 'faqs.txt'         # Text file containing FAQ knowledge base
+# Paths are relative to the backend root directory
+DATABASE = os.path.join('data', 'conversations.db')  # SQLite database file for conversation storage
+FAQ_FILE = os.path.join('config', 'faqs.txt')        # Text file containing FAQ knowledge base
 
 # Configure Gemini API
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')

@@ -7,6 +7,7 @@ Complete documentation for the full-stack AI Customer Support Bot with React fro
 ## 📦 Project Overview
 
 ### Architecture
+
 ```
 ┌─────────────────┐         ┌──────────────────┐         ┌─────────────────┐
 │   React Frontend│ ◄─────► │  Flask Backend   │ ◄─────► │  Gemini API     │
@@ -23,12 +24,14 @@ Complete documentation for the full-stack AI Customer Support Bot with React fro
 ### Technology Stack
 
 **Frontend:**
+
 - ⚛️ React 18
 - 📡 Axios for HTTP requests
 - 🎨 Custom CSS with animations
 - 📱 Responsive design
 
 **Backend:**
+
 - 🐍 Python 3.12
 - 🌐 Flask 3.0.0
 - 🗄️ SQLite for session storage
@@ -47,6 +50,7 @@ start-fullstack.bat
 ```
 
 This will:
+
 1. Start Flask backend on port 5000
 2. Start React frontend on port 3000
 3. Open both in separate windows
@@ -54,6 +58,7 @@ This will:
 ### Option 2: Manual Setup
 
 #### Terminal 1 - Backend
+
 ```bash
 # Activate virtual environment
 venv\Scripts\activate
@@ -63,6 +68,7 @@ python app.py
 ```
 
 #### Terminal 2 - Frontend
+
 ```bash
 # Navigate to frontend
 cd frontend
@@ -79,6 +85,7 @@ npm start
 ## 📋 Detailed Setup Instructions
 
 ### Prerequisites
+
 - ✅ Python 3.8+ installed
 - ✅ Node.js 16+ and npm installed
 - ✅ Gemini API key (in `.env` file)
@@ -87,31 +94,36 @@ npm start
 ### Backend Setup
 
 1. **Create virtual environment (if not exists):**
+
    ```bash
    python -m venv venv
    ```
 
 2. **Activate virtual environment:**
+
    ```bash
    # Windows
    venv\Scripts\activate
-   
+
    # Mac/Linux
    source venv/bin/activate
    ```
 
 3. **Install Python dependencies:**
+
    ```bash
    pip install -r requirements.txt
    ```
 
 4. **Configure environment variables:**
    Create `.env` file with:
+
    ```
    GEMINI_API_KEY=your_actual_api_key_here
    ```
 
 5. **Start the backend:**
+
    ```bash
    python app.py
    ```
@@ -121,22 +133,26 @@ npm start
 ### Frontend Setup
 
 1. **Navigate to frontend directory:**
+
    ```bash
    cd frontend
    ```
 
 2. **Install Node dependencies:**
+
    ```bash
    npm install
    ```
 
    This installs:
+
    - react
    - react-dom
    - react-scripts
    - axios
 
 3. **Start the frontend:**
+
    ```bash
    npm start
    ```
@@ -148,6 +164,7 @@ npm start
 ## 🎯 Features
 
 ### Frontend Features
+
 - 💬 Beautiful chat interface
 - ⌨️ Real-time typing indicators
 - 🎨 Smooth animations
@@ -157,6 +174,7 @@ npm start
 - 🕐 Message timestamps
 
 ### Backend Features
+
 - 🤖 AI-powered responses (Gemini 2.5 Flash)
 - 📝 FAQ-based answering
 - 🧠 Conversation memory
@@ -174,12 +192,14 @@ npm start
 
 **Port:** 5000 (default)
 To change, edit `app.py`:
+
 ```python
 app.run(debug=True, host='0.0.0.0', port=YOUR_PORT)
 ```
 
 **CORS:** Enabled for all origins by default
 To restrict, edit `app.py`:
+
 ```python
 CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 ```
@@ -188,12 +208,14 @@ CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 
 **Backend API URL:** `http://localhost:5000` (default)
 To change, edit `frontend/src/App.js`:
+
 ```javascript
-const API_URL = 'http://your-backend-url';
+const API_URL = "http://your-backend-url";
 ```
 
 **Port:** 3000 (default)
 To change:
+
 ```bash
 PORT=3001 npm start
 ```
@@ -203,9 +225,11 @@ PORT=3001 npm start
 ## 📡 API Endpoints
 
 ### GET /health
+
 Health check endpoint
 
 **Response:**
+
 ```json
 {
   "status": "ok"
@@ -213,9 +237,11 @@ Health check endpoint
 ```
 
 ### POST /chat
+
 Send message to chatbot
 
 **Request:**
+
 ```json
 {
   "session_id": "unique_session_id",
@@ -224,6 +250,7 @@ Send message to chatbot
 ```
 
 **Response:**
+
 ```json
 {
   "response": "You can return products within 30 days..."
@@ -231,9 +258,11 @@ Send message to chatbot
 ```
 
 ### POST /escalate
+
 Get conversation summary
 
 **Request:**
+
 ```json
 {
   "session_id": "unique_session_id"
@@ -241,6 +270,7 @@ Get conversation summary
 ```
 
 **Response:**
+
 ```json
 {
   "summary": "Customer asked about return policy..."
@@ -252,6 +282,7 @@ Get conversation summary
 ## 🧪 Testing
 
 ### Backend Testing
+
 ```bash
 # Run comprehensive API tests
 python test_api.py
@@ -264,12 +295,14 @@ python demo.py
 ```
 
 ### Frontend Testing
+
 ```bash
 cd frontend
 npm test
 ```
 
 ### Full Stack Testing
+
 1. Start both servers
 2. Open `http://localhost:3000`
 3. Test conversation flow:
@@ -317,6 +350,7 @@ ai-customer-support-bot/
 ### Change Theme Colors
 
 Edit `frontend/src/App.css`:
+
 ```css
 /* Primary gradient */
 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -328,6 +362,7 @@ background: linear-gradient(135deg, #YOUR_COLOR1 0%, #YOUR_COLOR2 100%);
 ### Add More FAQs
 
 Edit `faqs.txt`:
+
 ```
 Q: Your new question?
 A: Your new answer.
@@ -338,6 +373,7 @@ Restart backend to load new FAQs.
 ### Modify Bot Personality
 
 Edit `app.py` - `construct_prompt()` function:
+
 ```python
 prompt = f"""You are a [YOUR PERSONALITY] customer support assistant..."""
 ```
@@ -349,12 +385,14 @@ prompt = f"""You are a [YOUR PERSONALITY] customer support assistant..."""
 ### Frontend Deployment
 
 #### Build for Production
+
 ```bash
 cd frontend
 npm run build
 ```
 
 #### Deploy to Netlify
+
 ```bash
 # Install Netlify CLI
 npm install -g netlify-cli
@@ -365,6 +403,7 @@ netlify deploy --prod --dir=build
 ```
 
 #### Deploy to Vercel
+
 ```bash
 # Install Vercel CLI
 npm install -g vercel
@@ -377,6 +416,7 @@ vercel --prod
 ### Backend Deployment
 
 #### Deploy to Heroku
+
 ```bash
 # Install Heroku CLI
 # Create Procfile
@@ -388,12 +428,14 @@ git push heroku main
 ```
 
 #### Deploy to Railway
+
 1. Connect GitHub repository
 2. Select project
 3. Add environment variables
 4. Deploy automatically
 
 ### Full Stack Deployment
+
 1. Deploy backend first
 2. Get backend URL
 3. Update frontend `API_URL`
@@ -407,6 +449,7 @@ git push heroku main
 
 **Issue:** Port 5000 already in use
 **Solution:**
+
 ```bash
 # Kill process on port 5000
 netstat -ano | findstr :5000
@@ -415,6 +458,7 @@ taskkill /PID <process_id> /F
 
 **Issue:** Gemini API key not found
 **Solution:**
+
 - Check `.env` file exists
 - Verify API key is correct
 - Restart backend after adding key
@@ -423,12 +467,14 @@ taskkill /PID <process_id> /F
 
 **Issue:** Cannot connect to backend
 **Solution:**
+
 - Ensure backend is running on port 5000
 - Check CORS is enabled in `app.py`
 - Verify `API_URL` in `App.js`
 
 **Issue:** npm install fails
 **Solution:**
+
 ```bash
 # Clear npm cache
 npm cache clean --force
@@ -442,11 +488,13 @@ npm install
 
 **Problem:** Access blocked by CORS policy
 **Solution:** Ensure flask-cors is installed:
+
 ```bash
 pip install flask-cors
 ```
 
 And enabled in `app.py`:
+
 ```python
 from flask_cors import CORS
 CORS(app)
@@ -457,11 +505,13 @@ CORS(app)
 ## 📊 Performance
 
 ### Backend
+
 - Average response time: ~1-2 seconds
 - Handles concurrent requests
 - Database operations are fast (SQLite)
 
 ### Frontend
+
 - Lightweight bundle size
 - Fast initial load
 - Smooth animations (60fps)
@@ -472,6 +522,7 @@ CORS(app)
 ## 🔒 Security Best Practices
 
 ### Backend
+
 - ✅ API keys in environment variables
 - ✅ Input validation on all endpoints
 - ✅ SQL injection prevention (parameterized queries)
@@ -480,6 +531,7 @@ CORS(app)
 - ⚠️ Use HTTPS in production
 
 ### Frontend
+
 - ✅ No sensitive data in frontend code
 - ✅ Environment-based configuration
 - ✅ XSS protection (React escapes by default)
@@ -491,6 +543,7 @@ CORS(app)
 ## 🎓 Development Tips
 
 ### Backend Development
+
 ```bash
 # Auto-reload is enabled in debug mode
 # Just save files and Flask will reload
@@ -500,6 +553,7 @@ CORS(app)
 ```
 
 ### Frontend Development
+
 ```bash
 # Hot reload is automatic
 # Just save files and browser refreshes
@@ -513,6 +567,7 @@ CORS(app)
 ## 📈 Future Enhancements
 
 ### Frontend
+
 - [ ] User authentication
 - [ ] Message persistence
 - [ ] File uploads
@@ -523,6 +578,7 @@ CORS(app)
 - [ ] Export conversation
 
 ### Backend
+
 - [ ] Rate limiting
 - [ ] User authentication
 - [ ] Logging system
@@ -533,6 +589,7 @@ CORS(app)
 - [ ] Admin panel
 
 ### Infrastructure
+
 - [ ] Docker containers
 - [ ] CI/CD pipeline
 - [ ] Load balancing
@@ -560,6 +617,7 @@ MIT License - Feel free to use and modify
 ## 👨‍💻 Support
 
 For issues or questions:
+
 1. Check troubleshooting section
 2. Review documentation files
 3. Check terminal logs for errors
