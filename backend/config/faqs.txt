@@ -1,23 +1,395 @@
-Q: What is your return policy?
-A: You can return products within 30 days of purchase with original packaging and receipt.
+========================================
+ORDERS & CHECKOUT
+========================================
 
-Q: Do you ship internationally?
-A: Yes, we ship to over 50 countries worldwide. Shipping costs vary by location.
+Q: How do I place an order?
+A: Add items to your cart, proceed to checkout, enter shipping details, select payment method, and confirm your order.
+
+Q: Can I order without creating an account?
+A: Yes, we offer guest checkout. However, creating an account helps you track orders and speeds up future purchases.
 
 Q: What payment methods do you accept?
-A: We accept credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers.
+A: We accept credit/debit cards (Visa, MasterCard, American Express, Discover), PayPal, Google Pay, Apple Pay, and bank transfers.
 
-Q: How long does shipping take?
-A: Domestic shipping takes 3-5 business days. International shipping takes 7-14 business days.
+Q: Is it safe to use my credit card on your site?
+A: Yes, we use 256-bit SSL encryption and are PCI DSS compliant to ensure your payment information is secure.
 
-Q: Do you offer warranty on products?
-A: Yes, all products come with a 1-year manufacturer's warranty.
+Q: Can I use multiple payment methods for one order?
+A: Currently, we support one payment method per order. You cannot split payments between different methods.
 
-Q: How can I track my order?
-A: Once your order ships, you will receive a tracking number via email.
+Q: Do you accept cash on delivery (COD)?
+A: Yes, COD is available for domestic orders below $500. A small COD fee may apply.
 
-Q: What is your customer service phone number?
-A: You can reach us at 1-800-SUPPORT (1-800-787-7678) from 9 AM to 6 PM EST.
+Q: Can I get an invoice for my order?
+A: Yes, an invoice is automatically sent to your email after order confirmation. You can also download it from your account.
 
 Q: Can I modify my order after placing it?
-A: Orders can be modified within 1 hour of placement. Contact customer service immediately.
+A: Orders can be modified within 1 hour of placement. Contact customer service immediately at 1-800-787-7678.
+
+Q: How do I cancel my order?
+A: You can cancel your order within 1 hour of placement through your account or by contacting customer service.
+
+Q: What if I entered the wrong shipping address?
+A: Contact us immediately at 1-800-787-7678. If the order hasn't shipped, we can update the address.
+
+Q: Can I change the delivery address after the order is shipped?
+A: Once shipped, address changes are not possible. You may redirect the package through the courier's website using your tracking number.
+
+Q: Do you offer gift wrapping?
+A: Yes, gift wrapping is available for $4.99 per item. Select this option at checkout.
+
+Q: Can I add a gift message?
+A: Yes, you can add a personalized gift message during checkout at no extra cost.
+
+Q: What happens if my payment fails?
+A: Your order will not be processed. Please check your payment details and try again or use an alternative payment method.
+
+Q: Will I receive an order confirmation?
+A: Yes, you'll receive an email confirmation immediately after placing your order with order details and estimated delivery date.
+
+========================================
+SHIPPING & DELIVERY
+========================================
+
+Q: How long does shipping take?
+A: Domestic shipping takes 3-5 business days. International shipping takes 7-14 business days. Express options available.
+
+Q: Do you ship internationally?
+A: Yes, we ship to over 50 countries worldwide. Shipping costs and delivery times vary by location.
+
+Q: What are the shipping charges?
+A: Domestic shipping is $5.99 for standard delivery. Free shipping on orders over $50. International rates vary by destination.
+
+Q: Do you offer express or overnight shipping?
+A: Yes, express (2-3 days) is $15.99 and overnight delivery is $29.99 for domestic orders.
+
+Q: How can I track my order?
+A: Once shipped, you'll receive a tracking number via email. Track your package on our website or the courier's site.
+
+Q: What courier services do you use?
+A: We partner with FedEx, UPS, USPS, and DHL for reliable delivery services.
+
+Q: Can I pick up my order from a store?
+A: Yes, select "Store Pickup" at checkout. You'll receive a notification when your order is ready for collection.
+
+Q: What if I'm not home during delivery?
+A: The courier will leave a notice. You can reschedule delivery or pick up from the nearest courier facility.
+
+Q: Do you deliver on weekends and holidays?
+A: Standard delivery is Monday-Friday. Express and weekend delivery options are available for an additional fee.
+
+Q: Can I request a specific delivery time?
+A: We offer delivery time slots for an additional fee. Check availability during checkout.
+
+Q: What happens if my package is lost in transit?
+A: Contact us immediately. We'll file a claim with the courier and send a replacement or issue a refund.
+
+Q: My package shows delivered but I haven't received it. What should I do?
+A: Check with neighbors or your building's front desk. If still not found, contact us within 48 hours to file a claim.
+
+Q: Do you ship to P.O. boxes?
+A: Yes, we ship to P.O. boxes via USPS. However, express delivery options may not be available for P.O. box addresses.
+
+Q: Can I ship to multiple addresses in one order?
+A: Currently, each order can ship to one address. Place separate orders for different shipping destinations.
+
+Q: Do you offer international shipping insurance?
+A: Yes, international orders are automatically insured. Domestic insurance is available for $2.99 during checkout.
+
+========================================
+RETURNS & REFUNDS
+========================================
+
+Q: What is your return policy?
+A: You can return most items within 30 days of delivery with original packaging, tags, and receipt for a full refund.
+
+Q: How do I return an item?
+A: Log into your account, go to Orders, select the item, click "Return," choose reason, and print the prepaid return label.
+
+Q: Who pays for return shipping?
+A: Return shipping is free for defective items. For other returns, a $6.99 return shipping fee is deducted from your refund.
+
+Q: How long does it take to process a refund?
+A: Refunds are processed within 5-7 business days after we receive your return. It may take 3-5 additional days to reflect in your account.
+
+Q: Can I exchange an item instead of returning it?
+A: Yes, select "Exchange" during the return process. We'll send the replacement once we receive your return.
+
+Q: What items cannot be returned?
+A: Perishable goods, personalized items, intimate apparel, opened software, and digital downloads cannot be returned.
+
+Q: Can I return a gift?
+A: Yes, items purchased as gifts can be returned for store credit within 30 days with the gift receipt.
+
+Q: What if I received a damaged or defective product?
+A: Contact us immediately with photos. We'll send a replacement free of charge or issue a full refund including shipping costs.
+
+Q: Can I return items bought during a sale?
+A: Yes, sale items can be returned within the same 30-day window as regular-priced items.
+
+Q: What if my return is rejected?
+A: We'll explain the reason and return the item to you. Common reasons include missing tags, wear and tear, or items outside the return window.
+
+Q: How do I return an international order?
+A: Contact customer service for a return authorization. International return shipping costs are the customer's responsibility unless the item is defective.
+
+Q: Can I get a refund if I used a promo code?
+A: Yes, refunds reflect the actual amount paid after the promo code discount.
+
+Q: What is your restocking fee?
+A: We don't charge restocking fees for most items. Exceptions include large appliances and electronics (15% restocking fee).
+
+Q: Can I return opened electronics?
+A: Opened electronics can be returned within 15 days if defective. Non-defective opened electronics are subject to a 15% restocking fee.
+
+Q: How do I track my return?
+A: Use the tracking number on your return label. Once we receive your return, you'll get an email confirmation.
+
+========================================
+ACCOUNT & PROFILE
+========================================
+
+Q: How do I create an account?
+A: Click "Sign Up," enter your email, create a password, and fill in your details. You can also sign up using Google or Facebook.
+
+Q: I forgot my password. How do I reset it?
+A: Click "Forgot Password" on the login page, enter your email, and follow the reset link sent to your inbox.
+
+Q: Can I change my email address?
+A: Yes, go to Account Settings > Profile > Edit Email. You'll need to verify your new email address.
+
+Q: How do I update my shipping address?
+A: Go to Account Settings > Address Book > Add/Edit Address. You can save multiple addresses for quick checkout.
+
+Q: Can I save multiple payment methods?
+A: Yes, add multiple cards to your account for faster checkout. We store payment details securely using encryption.
+
+Q: How do I view my order history?
+A: Log into your account and go to "My Orders" to see all past and current orders.
+
+Q: Can I delete my account?
+A: Yes, contact customer service to request account deletion. Note that this action is permanent and cannot be undone.
+
+Q: How do I unsubscribe from promotional emails?
+A: Click "Unsubscribe" at the bottom of any promotional email, or manage your preferences in Account Settings > Notifications.
+
+Q: Is my personal information secure?
+A: Yes, we use industry-standard encryption and never share your personal information with third parties without your consent.
+
+Q: Can I have multiple accounts?
+A: Each person should have only one account. Multiple accounts may be merged or suspended.
+
+========================================
+PRODUCTS & AVAILABILITY
+========================================
+
+Q: How do I know if an item is in stock?
+A: Product availability is shown on the product page. If out of stock, you can sign up for restock notifications.
+
+Q: Can I pre-order items?
+A: Yes, select items available for pre-order will have a "Pre-Order" button. You'll be charged when the item ships.
+
+Q: Do you offer price matching?
+A: Yes, we match prices from major competitors. Contact customer service within 7 days of purchase with proof of lower price.
+
+Q: How often do you restock popular items?
+A: Restocking schedules vary by product. Sign up for email alerts to be notified when items are back in stock.
+
+Q: Can I request a product that's not in your catalog?
+A: Yes, submit product requests through our "Suggest a Product" form. We review all suggestions for future inventory.
+
+Q: Do you sell refurbished items?
+A: Yes, refurbished items are clearly marked and come with a 90-day warranty. They're tested to ensure quality.
+
+Q: Are your product images accurate?
+A: We strive for accuracy, but actual products may vary slightly from images. Detailed descriptions include exact specifications.
+
+Q: Do you offer bulk or wholesale pricing?
+A: Yes, contact our Business Sales team at business@company.com for bulk orders over 50 units.
+
+Q: Can I reserve an item without buying it?
+A: Items in your cart are not reserved. Complete your purchase to secure the item.
+
+Q: What does "Limited Stock" mean?
+A: It means we have fewer than 10 units available. These items sell quickly, so order soon.
+
+========================================
+DISCOUNTS & PROMOTIONS
+========================================
+
+Q: How do I use a promo code?
+A: Enter your promo code in the "Promo Code" field at checkout and click "Apply" before completing your purchase.
+
+Q: Can I use multiple promo codes on one order?
+A: No, only one promo code can be used per order. The code with the highest discount will automatically apply.
+
+Q: Do promo codes work on sale items?
+A: Most promo codes exclude sale items unless specifically stated. Check the terms and conditions of each promotion.
+
+Q: How do I get free shipping?
+A: Orders over $50 automatically qualify for free standard shipping. Some promo codes also offer free shipping.
+
+Q: Do you have a loyalty program?
+A: Yes, join our Rewards Program to earn 1 point per dollar spent. Redeem points for discounts and exclusive perks.
+
+Q: How do I redeem my reward points?
+A: Points can be redeemed at checkout. 100 points = $5 off your order.
+
+Q: When do you have sales?
+A: We have seasonal sales (Spring, Summer, Fall, Winter), Black Friday, Cyber Monday, and flash sales announced via email.
+
+Q: Can I combine a promo code with my rewards points?
+A: Yes, you can use both a promo code and rewards points on the same order for maximum savings.
+
+Q: Do you offer student discounts?
+A: Yes, students get 15% off with valid student ID verification through our Student Discount Program.
+
+Q: Do you have a referral program?
+A: Yes, refer friends and you both get $10 off your next purchase when they make their first order.
+
+========================================
+WARRANTY & PRODUCT SUPPORT
+========================================
+
+Q: Do you offer warranty on products?
+A: Yes, all products come with a 1-year manufacturer's warranty covering defects in materials and workmanship.
+
+Q: How do I make a warranty claim?
+A: Contact customer service with your order number and issue description. We'll guide you through the warranty process.
+
+Q: What does the warranty cover?
+A: Warranties cover manufacturing defects and component failures under normal use. Accidental damage is not covered.
+
+Q: Can I purchase extended warranty?
+A: Yes, extended warranties (2-3 years) are available for electronics and appliances at checkout.
+
+Q: What if my product breaks after the warranty expires?
+A: Contact our repair service for out-of-warranty repairs at competitive rates, or check if an extended warranty was purchased.
+
+Q: Do you provide technical support?
+A: Yes, our technical support team is available at 1-800-SUPPORT for troubleshooting and product assistance.
+
+Q: Where can I find product manuals?
+A: Product manuals are available on each product page under "Downloads" or contact support to request a copy.
+
+Q: Can I get replacement parts?
+A: Yes, contact customer service with your product model number. We can order specific replacement parts.
+
+========================================
+CUSTOMER SERVICE
+========================================
+
+Q: What is your customer service phone number?
+A: Call us at 1-800-SUPPORT (1-800-787-7678) Monday-Friday 9 AM to 6 PM EST, Saturday 10 AM to 4 PM EST.
+
+Q: Do you have live chat support?
+A: Yes, click the chat icon on our website for instant support during business hours.
+
+Q: How can I email customer service?
+A: Email us at support@company.com. We respond within 24 hours on business days.
+
+Q: Do you have social media support?
+A: Yes, reach us on Facebook, Twitter, and Instagram. Direct messages are monitored daily.
+
+Q: What if I have a complaint?
+A: Contact customer service or email complaints@company.com. We take all feedback seriously and respond within 48 hours.
+
+Q: Can I schedule a callback?
+A: Yes, use our "Schedule Callback" feature on the Contact Us page, and we'll call you at your preferred time.
+
+Q: Do you offer support in languages other than English?
+A: Yes, we offer support in Spanish, French, and Mandarin. Select your preferred language when contacting us.
+
+Q: What are your holiday hours?
+A: We're closed on major holidays (Thanksgiving, Christmas, New Year's). Check our website for specific holiday hours.
+
+========================================
+SHIPPING RESTRICTIONS & POLICIES
+========================================
+
+Q: Do you ship to APO/FPO addresses?
+A: Yes, we ship to APO/FPO addresses via USPS. Standard shipping rates apply.
+
+Q: Are there items you don't ship internationally?
+A: Hazardous materials, aerosols, liquids over 3.4oz, and certain electronics cannot be shipped internationally due to regulations.
+
+Q: Do I have to pay customs duties for international orders?
+A: International customers are responsible for customs duties and import taxes. These fees are not included in our shipping charges.
+
+Q: What if customs rejects my package?
+A: If customs rejects your package, it will be returned to us. We'll issue a refund minus return shipping costs.
+
+Q: Can I use a freight forwarder?
+A: Yes, you can ship to a freight forwarding address. Ensure the address is valid and accepts commercial deliveries.
+
+========================================
+SECURITY & PRIVACY
+========================================
+
+Q: How is my data protected?
+A: We use 256-bit SSL encryption, secure servers, and comply with GDPR and CCPA privacy regulations.
+
+Q: Do you sell my personal information?
+A: No, we never sell your personal information to third parties. We only share data with service providers necessary for order fulfillment.
+
+Q: How can I access my personal data?
+A: Log into your account or contact privacy@company.com to request a copy of your personal data.
+
+Q: Can I request data deletion?
+A: Yes, contact privacy@company.com to request deletion of your personal data in compliance with privacy laws.
+
+Q: What cookies do you use?
+A: We use essential cookies for site functionality, analytics cookies to improve service, and advertising cookies. Manage preferences in Cookie Settings.
+
+Q: Is my payment information stored?
+A: Payment details are encrypted and stored securely. We never see or store complete credit card numbers.
+
+========================================
+BUSINESS & CORPORATE
+========================================
+
+Q: Do you offer corporate accounts?
+A: Yes, contact business@company.com to set up a corporate account with invoicing and volume discounts.
+
+Q: Can I get a tax exemption?
+A: Yes, tax-exempt organizations can submit their tax exemption certificate to billing@company.com.
+
+Q: Do you offer net payment terms?
+A: Net 30 payment terms are available for approved business accounts. Apply through our Business Portal.
+
+Q: Can I request a quote for bulk orders?
+A: Yes, use our "Request Quote" form for orders over 50 units or contact business@company.com.
+
+========================================
+SPECIAL CIRCUMSTANCES
+========================================
+
+Q: What is your policy for discontinued items?
+A: Discontinued items are final sale. Limited stock and no restocks available.
+
+Q: Can I cancel a backorder?
+A: Yes, backorders can be cancelled anytime before shipping. Log into your account or contact customer service.
+
+Q: What if weather delays my delivery?
+A: Severe weather may cause delays beyond our control. Check your tracking for updates or contact customer service.
+
+Q: Do you price adjust if an item goes on sale after I buy it?
+A: Yes, if an item goes on sale within 7 days of your purchase, contact us for a price adjustment credit.
+
+Q: Can I order items for delivery in the future?
+A: Currently, we don't offer scheduled future delivery. Orders ship within 1-2 business days of placement.
+
+Q: What happens if an item is recalled?
+A: We'll email all affected customers immediately with instructions for return, replacement, or refund.
+
+Q: Do you accept returns for prescription items?
+A: Prescription items and medical devices cannot be returned due to health and safety regulations unless defective.
+
+Q: Can I review products I purchased?
+A: Yes, log into your account, go to order history, and click "Write a Review" for delivered items.
+
+Q: How do I report a counterfeit product?
+A: Contact us immediately at fraud@company.com with order details and photos. We take counterfeits seriously.
+
+Q: What if I suspect fraud on my account?
+A: Change your password immediately and contact security@company.com. We'll investigate and secure your account.
