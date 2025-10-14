@@ -60,11 +60,13 @@ The server will start at `http://localhost:5000`
 ## 📡 API Endpoints
 
 ### Health Check
+
 ```http
 GET /health
 ```
 
 ### Send Chat Message
+
 ```http
 POST /chat
 Content-Type: application/json
@@ -76,6 +78,7 @@ Content-Type: application/json
 ```
 
 ### Request Escalation
+
 ```http
 POST /escalate
 Content-Type: application/json
@@ -112,10 +115,13 @@ python scripts/demo.py
 ## 🔧 Configuration
 
 ### FAQ Knowledge Base
+
 Edit `config/faqs.txt` to update the chatbot's knowledge base.
 
 ### Model Parameters
+
 Edit `app/main.py` to adjust Gemini model settings:
+
 - `temperature`: Response creativity (0.0-1.0)
 - `max_output_tokens`: Maximum response length
 - `top_p`, `top_k`: Token selection parameters

@@ -88,26 +88,31 @@ ai-customer-support-bot/
 ## 🎯 Key Files
 
 ### Backend Entry Points
+
 - **`backend/run.py`** - Start the Flask server
 - **`backend/app/main.py`** - Main application code (API endpoints)
 - **`backend/config/faqs.txt`** - Edit to update chatbot knowledge
 
 ### Frontend Entry Points
+
 - **`frontend/src/App.js`** - Main React component
 - **`frontend/src/index.js`** - React entry point
 - **`frontend/package.json`** - NPM dependencies
 
 ### Configuration
+
 - **`.env`** - Store your GEMINI_API_KEY here (not in git)
 - **`backend/requirements.txt`** - Python dependencies
 - **`frontend/package.json`** - JavaScript dependencies
 
 ### Testing & Utilities
+
 - **`backend/tests/test_api.py`** - Full API test suite
 - **`backend/scripts/demo.py`** - Live demonstration
 - **`backend/scripts/diagnose.py`** - Diagnostic tool
 
 ### Documentation
+
 - **`README.md`** - Main project documentation
 - **`QUICK_START.md`** - Quick reference guide
 - **`docs/`** - Detailed documentation and guides
@@ -115,6 +120,7 @@ ai-customer-support-bot/
 ## 🚀 Running the Application
 
 ### Option 1: Automated (Windows)
+
 ```bash
 start-fullstack.bat
 ```
@@ -122,12 +128,14 @@ start-fullstack.bat
 ### Option 2: Manual
 
 **Backend:**
+
 ```bash
 cd backend
 python run.py
 ```
 
 **Frontend:**
+
 ```bash
 cd frontend
 npm start
@@ -144,15 +152,19 @@ npm start
 ## 🔧 Maintenance
 
 ### Adding New FAQs
+
 Edit: `backend/config/faqs.txt`
 
 ### Updating Styles
+
 Edit: `frontend/src/App.css` or component-specific CSS
 
 ### Adding API Endpoints
+
 Edit: `backend/app/main.py`
 
 ### Adding Tests
+
 Add to: `backend/tests/`
 
 ## 📝 Notes
@@ -165,6 +177,7 @@ Add to: `backend/tests/`
 ## 🌟 Clean Architecture
 
 This structure follows best practices:
+
 - ✅ Separation of concerns (frontend/backend)
 - ✅ Modular code organization
 - ✅ Clear folder hierarchy

@@ -93,12 +93,14 @@ source venv/bin/activate
 ### 3. Install Dependencies
 
 **Backend:**
+
 ```bash
 cd backend
 pip install -r requirements.txt
 ```
 
 **Frontend:**
+
 ```bash
 cd frontend
 npm install
