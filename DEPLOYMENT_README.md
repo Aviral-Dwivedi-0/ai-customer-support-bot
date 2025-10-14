@@ -30,14 +30,17 @@ I've prepared your project for Vercel deployment with these files:
 ## 🎯 Key Points
 
 ### Two Separate Vercel Projects
+
 You'll create TWO projects from the SAME repository:
 
 **Project 1: Backend**
+
 - Root Directory: `backend`
 - Framework: Other
 - Env: GEMINI_API_KEY, FLASK_ENV
 
-**Project 2: Frontend**  
+**Project 2: Frontend**
+
 - Root Directory: `frontend`
 - Framework: Create React App
 - Env: REACT_APP_API_URL (backend URL from Project 1)
@@ -45,6 +48,7 @@ You'll create TWO projects from the SAME repository:
 ### Important URLs You'll Get
 
 After deployment:
+
 - Backend: `https://ai-support-backend.vercel.app`
 - Frontend: `https://ai-support-frontend.vercel.app`
 
@@ -55,13 +59,16 @@ After deployment:
 **File: `frontend/src/App.js`**
 
 Change from:
+
 ```javascript
-const API_URL = 'http://localhost:5000';
+const API_URL = "http://localhost:5000";
 ```
 
 To:
+
 ```javascript
-const API_URL = process.env.REACT_APP_API_URL || 'https://your-backend.vercel.app';
+const API_URL =
+  process.env.REACT_APP_API_URL || "https://your-backend.vercel.app";
 ```
 
 ### Update CORS After Frontend Deployment
@@ -69,6 +76,7 @@ const API_URL = process.env.REACT_APP_API_URL || 'https://your-backend.vercel.ap
 **File: `backend/app/main.py`**
 
 Add your frontend URL to origins:
+
 ```python
 "origins": [
     "http://localhost:3000",

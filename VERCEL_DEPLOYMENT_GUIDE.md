@@ -5,6 +5,7 @@
 This guide will help you deploy your full-stack AI Customer Support Bot to Vercel.
 
 **Architecture:**
+
 - **Backend (Flask):** Deployed as Vercel Serverless Function
 - **Frontend (React):** Deployed as Static Site on Vercel
 
@@ -22,6 +23,7 @@ This guide will help you deploy your full-stack AI Customer Support Bot to Verce
 ## 🎯 Deployment Strategy
 
 We'll deploy in two parts:
+
 1. **Backend API** → Vercel Serverless (separate project)
 2. **Frontend** → Vercel Static Site (separate project)
 
@@ -32,6 +34,7 @@ We'll deploy in two parts:
 ### Step 1: Prepare Backend for Deployment
 
 The following files have been created for you:
+
 - ✅ `backend/vercel.json` - Vercel configuration
 - ✅ `backend/index.py` - Vercel entry point
 
@@ -66,15 +69,18 @@ You can also deploy the backend folder directly from your existing repo.
 ### Step 3: Deploy Backend to Vercel
 
 1. **Go to Vercel Dashboard:**
+
    - Visit: https://vercel.com/new
    - Sign in with GitHub
 
 2. **Import Project:**
+
    - Click "Add New..." → "Project"
    - Select your repository (ai-customer-support-backend or ai-customer-support-bot)
    - If using existing repo, set "Root Directory" to `backend`
 
 3. **Configure Project:**
+
    ```
    Framework Preset: Other
    Root Directory: backend (if using monorepo)
@@ -84,6 +90,7 @@ You can also deploy the backend folder directly from your existing repo.
    ```
 
 4. **Add Environment Variables:**
+
    - Click "Environment Variables"
    - Add: `GEMINI_API_KEY` = `your-gemini-api-key-here`
    - Add: `FLASK_ENV` = `production`
@@ -96,6 +103,7 @@ You can also deploy the backend folder directly from your existing repo.
 ### Step 4: Test Backend API
 
 Once deployed, test your backend:
+
 ```bash
 # Test health check
 curl https://your-backend.vercel.app/
@@ -117,18 +125,22 @@ Before deploying frontend, update the backend URL:
 **File: `frontend/src/App.js`**
 
 Find this line (around line 10-15):
+
 ```javascript
-const API_URL = 'http://localhost:5000';
+const API_URL = "http://localhost:5000";
 ```
 
 Replace with your Vercel backend URL:
+
 ```javascript
-const API_URL = process.env.REACT_APP_API_URL || 'https://your-backend.vercel.app';
+const API_URL =
+  process.env.REACT_APP_API_URL || "https://your-backend.vercel.app";
 ```
 
 ### Step 2: Add Environment Variable File
 
 Create `frontend/.env.production`:
+
 ```
 REACT_APP_API_URL=https://your-backend.vercel.app
 ```
@@ -136,14 +148,17 @@ REACT_APP_API_URL=https://your-backend.vercel.app
 ### Step 3: Deploy Frontend to Vercel
 
 1. **Go to Vercel Dashboard:**
+
    - Visit: https://vercel.com/new
    - Click "Add New..." → "Project"
 
 2. **Import Project:**
+
    - Select your repository (ai-customer-support-bot)
    - Set "Root Directory" to `frontend`
 
 3. **Configure Project:**
+
    ```
    Framework Preset: Create React App
    Root Directory: frontend
@@ -153,6 +168,7 @@ REACT_APP_API_URL=https://your-backend.vercel.app
    ```
 
 4. **Add Environment Variables:**
+
    - Click "Environment Variables"
    - Add: `REACT_APP_API_URL` = `https://your-backend.vercel.app`
 
@@ -168,13 +184,15 @@ REACT_APP_API_URL=https://your-backend.vercel.app
 If you want to deploy both from the same repository:
 
 ### Backend Deployment (Project 1)
+
 - Repository: ai-customer-support-bot
 - Root Directory: `backend`
 - Framework: Other
 - Environment Variables: `GEMINI_API_KEY`
 
 ### Frontend Deployment (Project 2)
-- Repository: ai-customer-support-bot  
+
+- Repository: ai-customer-support-bot
 - Root Directory: `frontend`
 - Framework: Create React App
 - Environment Variables: `REACT_APP_API_URL`
@@ -223,6 +241,7 @@ After updating, commit and push changes to redeploy.
 ## 🎯 Quick Command Reference
 
 ### Deploy Backend (if using separate repo)
+
 ```bash
 cd backend
 git init
@@ -233,6 +252,7 @@ git push -u origin main
 ```
 
 ### Update Frontend API URL
+
 ```bash
 cd frontend
 # Edit src/App.js - update API_URL
@@ -249,15 +269,18 @@ git push
 ### Backend Issues
 
 **Error: Module not found**
+
 - Check `requirements.txt` includes all dependencies
 - Redeploy after updating requirements.txt
 
 **Error: 500 Internal Server Error**
+
 - Check Vercel logs: Dashboard → Project → Functions
 - Verify `GEMINI_API_KEY` is set correctly
 - Check that `index.py` is in the backend directory
 
 **Error: CORS issues**
+
 - Update CORS origins in `app/main.py`
 - Include your frontend Vercel URL
 - Redeploy backend after changes
@@ -265,11 +288,13 @@ git push
 ### Frontend Issues
 
 **Error: Network request failed**
+
 - Check `REACT_APP_API_URL` is set correctly
 - Verify backend is deployed and accessible
 - Check browser console for CORS errors
 
 **Error: Build failed**
+
 - Check `package.json` dependencies
 - Run `npm install` locally to verify
 - Check Vercel build logs
@@ -279,12 +304,14 @@ git push
 ## 📊 Environment Variables Summary
 
 ### Backend (Vercel)
+
 ```
 GEMINI_API_KEY=your-actual-gemini-api-key
 FLASK_ENV=production
 ```
 
 ### Frontend (Vercel)
+
 ```
 REACT_APP_API_URL=https://your-backend.vercel.app
 ```
@@ -293,20 +320,24 @@ REACT_APP_API_URL=https://your-backend.vercel.app
 
 ## 🚀 Production Considerations
 
-1. **Database:** 
+1. **Database:**
+
    - Current: SQLite (works for Vercel but data is ephemeral)
    - Recommended: Use Vercel Postgres or external database for persistence
 
 2. **API Keys:**
+
    - Never commit API keys to git
    - Always use environment variables
    - Rotate keys periodically
 
 3. **Rate Limiting:**
+
    - Consider adding rate limiting to API
    - Protect against abuse
 
 4. **Monitoring:**
+
    - Use Vercel Analytics
    - Monitor API usage
    - Set up error tracking (Sentry)
@@ -320,16 +351,19 @@ REACT_APP_API_URL=https://your-backend.vercel.app
 ## 📝 Next Steps After Deployment
 
 1. **Test thoroughly:**
+
    - All FAQ categories
    - Different question types
    - Edge cases
 
 2. **Monitor usage:**
+
    - Check Vercel Analytics
    - Monitor API response times
    - Track Gemini API usage
 
 3. **Optimize:**
+
    - Enable caching where appropriate
    - Optimize bundle size
    - Add loading states
@@ -361,6 +395,7 @@ REACT_APP_API_URL=https://your-backend.vercel.app
 ---
 
 **Need Help?**
+
 - Vercel Support: https://vercel.com/support
 - Vercel Community: https://github.com/vercel/vercel/discussions
 
