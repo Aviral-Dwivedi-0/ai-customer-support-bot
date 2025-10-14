@@ -1,0 +1,471 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║          📦 STEP-BY-STEP VERCEL DEPLOYMENT INSTRUCTIONS 📦                ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+┌───────────────────────────────────────────────────────────────────────────┐
+│                     ✅ CODE COMMITTED TO GITHUB!                          │
+└───────────────────────────────────────────────────────────────────────────┘
+
+✅ All files committed and pushed to GitHub
+✅ Repository: https://github.com/Aviral-Dwivedi-0/ai-customer-support-bot
+✅ Branch: main
+✅ Ready for deployment!
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║                    STEP 1: SIGN UP FOR VERCEL                            ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+1. Open your browser and go to: https://vercel.com
+
+2. Click "Sign Up" (or "Start Deploying")
+
+3. Choose "Continue with GitHub"
+
+4. Log in with your GitHub account:
+   - Username: Aviral-Dwivedi-0
+   - Password: [Your GitHub Password]
+
+5. Click "Authorize Vercel" when prompted
+
+6. You'll be redirected to Vercel Dashboard
+
+✅ You're now signed up and ready to deploy!
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║              STEP 2: DEPLOY BACKEND (Flask API) 🔧                        ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+PART A: CREATE BACKEND PROJECT
+───────────────────────────────
+
+1. In Vercel Dashboard, click "Add New..." (top right)
+   → Select "Project"
+
+2. You'll see "Import Git Repository"
+   → Find: ai-customer-support-bot
+   → Click "Import"
+
+3. Configure the Backend Project:
+
+   ┌─────────────────────────────────────────────────────────────┐
+   │ FIELD                    VALUE                              │
+   ├─────────────────────────────────────────────────────────────┤
+   │ Project Name:            ai-support-backend                 │
+   │                          (or any name you prefer)           │
+   │                                                             │
+   │ Framework Preset:        Other                              │
+   │                                                             │
+   │ Root Directory:          backend  ← CLICK "Edit" TO SET!    │
+   │                          ⚠️ VERY IMPORTANT!                 │
+   │                                                             │
+   │ Build Command:           (leave empty)                      │
+   │                                                             │
+   │ Output Directory:        (leave empty)                      │
+   │                                                             │
+   │ Install Command:         pip install -r requirements.txt    │
+   │                          (auto-detected)                    │
+   └─────────────────────────────────────────────────────────────┘
+
+   ⚠️ CRITICAL: Make sure to set Root Directory to "backend"!
+   Click the "Edit" button next to Root Directory to change it.
+
+PART B: ADD ENVIRONMENT VARIABLES
+──────────────────────────────────
+
+4. Scroll down to "Environment Variables" section
+
+5. Click "Add" and enter:
+
+   First Variable:
+   ┌─────────────────────────────────────────────────────────────┐
+   │ Key:    GEMINI_API_KEY                                      │
+   │ Value:  [Paste your actual Gemini API key here]            │
+   │                                                             │
+   │ Where to get it:                                            │
+   │ https://aistudio.google.com/app/apikey                      │
+   └─────────────────────────────────────────────────────────────┘
+
+   Second Variable (optional):
+   ┌─────────────────────────────────────────────────────────────┐
+   │ Key:    FLASK_ENV                                           │
+   │ Value:  production                                          │
+   └─────────────────────────────────────────────────────────────┘
+
+6. Click "Deploy" button
+
+7. Wait for deployment (usually 2-3 minutes)
+   - You'll see a progress bar
+   - Wait for "Building..." to complete
+   - Wait for "Deploying..." to complete
+
+8. ✅ SUCCESS! You'll see: "Congratulations!"
+
+9. 📋 SAVE YOUR BACKEND URL!
+   
+   Copy the URL shown (looks like):
+   https://ai-support-backend.vercel.app
+   
+   or
+   
+   https://ai-support-backend-aviral-dwivedi-0s-projects.vercel.app
+   
+   ⚠️ IMPORTANT: Write this URL down - you'll need it for frontend!
+
+10. Test your backend:
+    - Click "Visit" or open the URL in browser
+    - You should see a message (may be blank page - that's OK!)
+    - Or test: https://your-backend-url.vercel.app/api/chat
+
+✅ Backend is deployed!
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║            STEP 3: UPDATE FRONTEND CODE 📝                                ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+Before deploying the frontend, you need to update the API URL.
+
+1. On your computer, open this file:
+   D:\Unthinkable Assignment\frontend\src\App.js
+
+2. Find line 12 (approximately):
+   const API_URL = 'http://localhost:5000';
+
+3. Replace it with:
+   const API_URL = process.env.REACT_APP_API_URL || 'YOUR_BACKEND_URL_HERE';
+
+   Replace YOUR_BACKEND_URL_HERE with your actual backend URL from Step 2!
+   
+   Example:
+   const API_URL = process.env.REACT_APP_API_URL || 'https://ai-support-backend.vercel.app';
+
+4. Save the file (Ctrl+S)
+
+5. Commit and push to GitHub:
+   
+   Open terminal in your project folder and run:
+   
+   git add frontend/src/App.js
+   git commit -m "Update API URL for Vercel deployment"
+   git push origin main
+
+6. Wait a few seconds for GitHub to update
+
+✅ Frontend code is ready!
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║            STEP 4: DEPLOY FRONTEND (React App) ⚛️                         ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+PART A: CREATE FRONTEND PROJECT
+────────────────────────────────
+
+1. Go back to Vercel Dashboard: https://vercel.com/dashboard
+
+2. Click "Add New..." → "Project"
+
+3. Import the SAME repository again:
+   → Find: ai-customer-support-bot
+   → Click "Import"
+
+4. Configure the Frontend Project:
+
+   ┌─────────────────────────────────────────────────────────────┐
+   │ FIELD                    VALUE                              │
+   ├─────────────────────────────────────────────────────────────┤
+   │ Project Name:            ai-support-frontend                │
+   │                          (or any name you prefer)           │
+   │                                                             │
+   │ Framework Preset:        Create React App                   │
+   │                          ← Should auto-detect!              │
+   │                                                             │
+   │ Root Directory:          frontend  ← CLICK "Edit" TO SET!   │
+   │                          ⚠️ VERY IMPORTANT!                 │
+   │                                                             │
+   │ Build Command:           npm run build                      │
+   │                          (auto-filled)                      │
+   │                                                             │
+   │ Output Directory:        build                              │
+   │                          (auto-filled)                      │
+   │                                                             │
+   │ Install Command:         npm install                        │
+   │                          (auto-filled)                      │
+   └─────────────────────────────────────────────────────────────┘
+
+   ⚠️ CRITICAL: Make sure to set Root Directory to "frontend"!
+
+PART B: ADD ENVIRONMENT VARIABLE
+─────────────────────────────────
+
+5. Scroll to "Environment Variables" section
+
+6. Click "Add" and enter:
+
+   ┌─────────────────────────────────────────────────────────────┐
+   │ Key:    REACT_APP_API_URL                                   │
+   │ Value:  [Paste your backend URL from Step 2]               │
+   │                                                             │
+   │ Example:                                                    │
+   │ https://ai-support-backend.vercel.app                       │
+   │                                                             │
+   │ ⚠️ Use YOUR actual backend URL!                             │
+   └─────────────────────────────────────────────────────────────┘
+
+7. Click "Deploy" button
+
+8. Wait for deployment (usually 2-3 minutes)
+   - Building... (may take longer than backend)
+   - Deploying...
+
+9. ✅ SUCCESS! You'll see: "Congratulations!"
+
+10. 📋 SAVE YOUR FRONTEND URL!
+    
+    Copy the URL shown (looks like):
+    https://ai-support-frontend.vercel.app
+    
+    or
+    
+    https://ai-support-frontend-aviral-dwivedi-0s-projects.vercel.app
+
+11. Click "Visit" to open your app!
+
+⚠️ You might see errors at this point - that's normal!
+   We need to update CORS settings in the next step.
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║              STEP 5: UPDATE CORS SETTINGS 🔒                              ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+Now we need to allow your frontend to communicate with your backend.
+
+1. On your computer, open this file:
+   D:\Unthinkable Assignment\backend\app\main.py
+
+2. Find the CORS configuration (around line 40-50):
+   
+   Look for:
+   CORS(app, resources={
+       r"/api/*": {
+           "origins": [
+               "http://localhost:3000"
+           ],
+   
+3. Update it to include your frontend URL:
+
+   CORS(app, resources={
+       r"/api/*": {
+           "origins": [
+               "http://localhost:3000",
+               "https://ai-support-frontend.vercel.app",  ← Add this!
+               "https://*.vercel.app"  ← Add this too!
+           ],
+           "methods": ["GET", "POST", "OPTIONS"],
+           "allow_headers": ["Content-Type"]
+       }
+   })
+
+   ⚠️ Replace with YOUR actual frontend URL!
+
+4. Save the file (Ctrl+S)
+
+5. Commit and push to GitHub:
+   
+   git add backend/app/main.py
+   git commit -m "Update CORS for Vercel frontend"
+   git push origin main
+
+6. Vercel will automatically redeploy your backend (takes ~1-2 minutes)
+
+7. You can watch the deployment in Vercel Dashboard:
+   - Go to your backend project
+   - You'll see a new deployment starting
+
+✅ CORS is configured!
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║                  STEP 6: TEST YOUR DEPLOYMENT 🧪                          ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+1. Open your frontend URL in a browser:
+   https://your-frontend.vercel.app
+
+2. You should see your AI Customer Support chatbot!
+
+3. Try asking questions:
+   ✅ "What payment methods do you accept?"
+   ✅ "How do I return a product?"
+   ✅ "Do you offer free shipping?"
+   ✅ "What's your warranty policy?"
+
+4. If it works - 🎉 CONGRATULATIONS! You're deployed!
+
+5. If you see errors:
+   → Open browser console (F12)
+   → Check for error messages
+   → See troubleshooting section below
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║                  🆘 TROUBLESHOOTING                                       ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+PROBLEM: "Network Error" or "Failed to fetch"
+SOLUTION:
+→ Check REACT_APP_API_URL in frontend environment variables
+→ Make sure it matches your backend URL exactly
+→ Redeploy frontend if needed
+
+PROBLEM: "CORS Error" in browser console
+SOLUTION:
+→ Check backend/app/main.py CORS settings
+→ Make sure your frontend URL is in the origins list
+→ Push changes to GitHub to trigger redeploy
+
+PROBLEM: Backend shows "500 Internal Server Error"
+SOLUTION:
+→ Go to Vercel Dashboard → Backend Project → Functions
+→ Check the logs for errors
+→ Verify GEMINI_API_KEY is set correctly
+→ Make sure it's a valid API key
+
+PROBLEM: Frontend won't build
+SOLUTION:
+→ Check Vercel build logs
+→ Look for npm install errors
+→ Make sure package.json is correct
+
+PROBLEM: Chat not responding
+SOLUTION:
+→ Check both backend and frontend are deployed
+→ Verify environment variables are set
+→ Check browser console (F12) for errors
+→ Test backend directly: https://your-backend.vercel.app
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║                  📋 DEPLOYMENT SUMMARY                                    ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+After successful deployment, you'll have:
+
+🔧 Backend (API):
+   URL: https://ai-support-backend.vercel.app
+   Purpose: Flask API, handles AI chat requests
+   Environment: GEMINI_API_KEY
+
+⚛️ Frontend (Website):
+   URL: https://ai-support-frontend.vercel.app
+   Purpose: React UI, chat interface
+   Environment: REACT_APP_API_URL
+
+📊 Features:
+   ✅ 150+ FAQ questions
+   ✅ 12 organized categories
+   ✅ AI-powered responses
+   ✅ Real-time chat
+   ✅ Professional e-commerce knowledge base
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║                  🎯 NEXT STEPS AFTER DEPLOYMENT                           ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+1. ✅ Test thoroughly with different questions
+2. ✅ Share your live chatbot URL with others!
+3. ✅ Update your GitHub README with live demo link
+4. ✅ Monitor Vercel Analytics for usage
+5. ✅ Consider adding a custom domain (optional)
+
+To add custom domain:
+→ Go to Vercel Dashboard → Project → Settings → Domains
+→ Add your domain (e.g., chatbot.yourdomain.com)
+→ Follow Vercel's DNS instructions
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║                  📚 IMPORTANT URLS                                        ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+Vercel Dashboard:
+https://vercel.com/dashboard
+
+Your GitHub Repo:
+https://github.com/Aviral-Dwivedi-0/ai-customer-support-bot
+
+Get Gemini API Key:
+https://aistudio.google.com/app/apikey
+
+Vercel Documentation:
+https://vercel.com/docs
+
+Vercel Support:
+https://vercel.com/support
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║                  ⚡ QUICK REFERENCE CHECKLIST                             ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+Backend Deployment:
+□ Sign up for Vercel
+□ Create new project
+□ Set root directory: backend
+□ Add GEMINI_API_KEY
+□ Deploy
+□ Copy backend URL
+
+Frontend Code Update:
+□ Update App.js with backend URL
+□ Commit and push to GitHub
+
+Frontend Deployment:
+□ Create new project (same repo)
+□ Set root directory: frontend
+□ Add REACT_APP_API_URL
+□ Deploy
+□ Copy frontend URL
+
+CORS Update:
+□ Update backend/app/main.py
+□ Add frontend URL to CORS
+□ Commit and push (auto-redeploys)
+
+Testing:
+□ Open frontend URL
+□ Test chat functionality
+□ Verify all features work
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║                  🎉 YOU'RE READY TO DEPLOY! 🎉                            ║
+║                                                                           ║
+║              Follow the steps above to deploy your                        ║
+║              AI Customer Support Bot to Vercel!                           ║
+║                                                                           ║
+║              Estimated time: 20-25 minutes                                ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+GOOD LUCK! 🚀
+
+Need help? Check the troubleshooting section or visit:
+https://vercel.com/support
