@@ -29,7 +29,7 @@ import ChatBubble from "./components/ChatBubble";
 import InputBox from "./components/InputBox";
 
 // Backend API base URL
-const API_URL = "http://localhost:5000";
+const API_URL = "https://ai-customer-support-bot-nch7.onrender.com";
 
 function App() {
   // ========== STATE MANAGEMENT ==========
