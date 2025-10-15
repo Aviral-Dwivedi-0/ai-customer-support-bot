@@ -35,8 +35,13 @@ load_dotenv()
 
 # Configuration constants
 # Paths are relative to the backend root directory
-DATABASE = os.path.join('data', 'conversations.db')  # SQLite database file for conversation storage
-FAQ_FILE = os.path.join('config', 'faqs.txt')        # Text file containing FAQ knowledge base
+# Get absolute paths
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BACKEND_DIR = os.path.dirname(BASE_DIR)
+
+# Use /tmp for database on Render (writable directory)
+DATABASE = os.path.join('/tmp', 'conversations.db')
+FAQ_FILE = os.path.join(BACKEND_DIR, 'config', 'faqs.txt')
 
 # Configure Gemini API
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
@@ -72,7 +77,16 @@ app = Flask(__name__)
 
 # Enable CORS to allow frontend (React) to communicate with backend
 # This allows requests from http://localhost:3000 (React dev server)
-CORS(app)
+CORS(app, resources={
+    r"/*": {
+        "origins": [
+            "https://ai-customer-support-bot-frontend.vercel.app",
+            "http://localhost:3000"
+        ],
+        "methods": ["GET", "POST", "OPTIONS"],
+        "allow_headers": ["Content-Type"]
+    }
+})
 
 
 # ========== DATABASE FUNCTIONS ==========
@@ -80,14 +94,11 @@ CORS(app)
 def init_db():
     """
     Initialize the SQLite database with conversations table.
-    
-    Creates a table to store conversation history with:
-        - session_id: Unique identifier for each user session (PRIMARY KEY)
-        - history: Text field storing the complete conversation history
-    
-    This function is idempotent - safe to call multiple times.
-    Uses 'CREATE TABLE IF NOT EXISTS' to avoid errors on repeated calls.
     """
+    # Ensure the directory exists
+    db_dir = os.path.dirname(DATABASE)
+    os.makedirs(db_dir, exist_ok=True)
+    
     conn = sqlite3.connect(DATABASE)
     cursor = conn.cursor()
     
@@ -102,7 +113,6 @@ def init_db():
     conn.commit()
     conn.close()
     print("✅ Database initialized successfully")
-
 
 def get_session_history(session_id):
     """
@@ -315,6 +325,16 @@ Summary:"""
     except Exception as e:
         return f"Error generating summary: {e}"
 
+# ========== DATABASE INITIALIZATION ==========
+# Initialize database when module loads (for Gunicorn)
+try:
+    init_db()
+    print("✅ Database initialized at module load")
+except Exception as e:
+    print(f"⚠️ Database initialization warning: {e}")
+
+
+# ========== FLASK API ENDPOINTS ==========
 
 # ========== FLASK API ENDPOINTS ==========
 
@@ -337,9 +357,7 @@ def health():
 
 @app.route('/', methods=['GET'])
 def home():
-    """
-    Root endpoint - API information.
-    """
+    """Root endpoint - API information."""
     return jsonify({
         "message": "AI Customer Support Bot API",
         "status": "running",
@@ -350,6 +368,7 @@ def home():
             "escalate": "/escalate (POST)"
         }
     }), 200
+
 
 
 @app.route('/chat', methods=['POST'])
@@ -425,9 +444,10 @@ def chat():
         return jsonify({"response": bot_response})
     
     except Exception as e:
-        # Log error and return 500 response
         print(f"❌ Error in /chat endpoint: {e}")
-        return jsonify({"error": "Internal server error"}), 500
+        import traceback
+        traceback.print_exc()
+        return jsonify({"error": "Internal server error", "details": str(e)}), 500
 
 
 @app.route('/escalate', methods=['POST'])
