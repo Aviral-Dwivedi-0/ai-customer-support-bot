@@ -335,6 +335,22 @@ def health():
     """
     return jsonify({"status": "ok"}), 200
 
+@app.route('/', methods=['GET'])
+def home():
+    """
+    Root endpoint - API information.
+    """
+    return jsonify({
+        "message": "AI Customer Support Bot API",
+        "status": "running",
+        "version": "1.0.0",
+        "endpoints": {
+            "health": "/health",
+            "chat": "/chat (POST)",
+            "escalate": "/escalate (POST)"
+        }
+    }), 200
+
 
 @app.route('/chat', methods=['POST'])
 def chat():
