@@ -2,6 +2,16 @@
 
 An AI-powered customer support chatbot with a beautiful React frontend and Flask backend, powered by Google's Gemini API.
 
+## 🌐 Live Demo
+
+**🚀 Try it now:** [https://ai-customer-support-bot-frontend.vercel.app](https://ai-customer-support-bot-frontend.vercel.app)
+
+**Deployment Links:**
+- **Frontend (React):** [https://ai-customer-support-bot-frontend.vercel.app](https://ai-customer-support-bot-frontend.vercel.app)
+- **Backend API (Flask):** [https://ai-customer-support-bot-beta.vercel.app](https://ai-customer-support-bot-beta.vercel.app)
+
+---
+
 ## ✨ Features
 
 - ✅ **Beautiful React Frontend** - Modern, responsive chat interface
